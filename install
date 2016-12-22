@@ -1,0 +1,12 @@
+#!/bin/bash
+/show/description "Install camp Websocket camera webserver"
+/show/messagebox "By patrickfuller https://github.com/patrickfuller/camp"
+/system/install python-dev 
+/system/install python-pip
+/system/install python-opencv
+/system/install libjpeg-dev
+pip install tornado Pillow picamera
+/system/gitcloner patrickfuller/camp /do/camp/www
+/show/listecho "Type /do/camp/start and go to http://$(/show/name).local:8000"
+ /do/supervisor/create camera "/usr/bin/python "/do/camp/www/server.py" --require-login  --use-usb --port 8000"
+

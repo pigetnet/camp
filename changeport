@@ -1,0 +1,5 @@
+#!/bin/bash
+/show/description "[CAMP] Change port to $port"
+port=$1
+/do/supervisor/create camera "/usr/bin/python "/do/camp/www/server.py" --require-login  --use-usb --port $port"
+
