@@ -1,6 +1,7 @@
 #!/bin/bash
 /show/description "Install camp Websocket camera webserver"
 /show/messagebox "By patrickfuller https://github.com/patrickfuller/camp"
+/pi/install supervisor
 /system/install python-dev 
 /system/install python-pip
 /system/install python-opencv
